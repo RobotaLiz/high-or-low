@@ -16,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/rullenulle" />
+        app:srcCompat="@drawable/gamewall" />
 
     <Button
         android:id="@+id/buttonStartGame"
@@ -103,7 +103,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/bakside" />
+        app:srcCompat="@drawable/backside" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -118,13 +118,17 @@
 
     <TextView
         android:id="@+id/timesUpView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_width="146dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/creepster"
+        android:text="30"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonStartGame"
-        android:text="Times"/>
+        app:layout_constraintTop_toBottomOf="@+id/buttonStartGame" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

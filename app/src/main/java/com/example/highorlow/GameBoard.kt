@@ -6,7 +6,6 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.os.CountDownTimer
-import java.util.*
 
 class GameBoard : AppCompatActivity() {
 
@@ -25,34 +24,24 @@ class GameBoard : AppCompatActivity() {
      R.drawable.diamondking, R.drawable.clubking,R.drawable.heartking,R.drawable.spadeking,
      R.drawable.diamondace, R.drawable.clubace,R.drawable.heartace,R.drawable.spadeace)
 
-
-
     lateinit var scoreView : TextView
     lateinit var cardView : ImageView
     var card = 1
     var score = 0
     var hasStarted = false
     lateinit var timerView : TextView
-    var backside = (R.drawable.bakside)
+    var backside = (R.drawable.backside)
 
-
-
-
-
-     var Timer = object: CountDownTimer(30000, 1000) {
+    var timer = object: CountDownTimer(30000, 1000) {
          override fun onTick(millisUntilFinished: Long) {
              timerView.text = (millisUntilFinished/1000).toString()
 
          }
-
          override fun onFinish() {
              hasStarted = false
              timerView.text = "TIMES UP!"
-
          }
      }
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_board)
@@ -61,20 +50,15 @@ class GameBoard : AppCompatActivity() {
         cardView = findViewById(R.id.cardView)
         timerView = findViewById(R.id.timesUpView)
 
-
         val buttonStartGameBoard = findViewById<Button>(R.id.buttonStartGame)
         buttonStartGameBoard.setOnClickListener {
                 if(!hasStarted){
                     buttonStartGameBoard.text = "Restart Game"
-
-                    Timer.start()
-
-
+                    timer.start()
                     hasStarted = true
                     nextCard()
-
-                }else{
-                  Timer.cancel()
+                }else {
+                    timer.cancel()
                     buttonStartGameBoard.text = "Start Game"
                     hasStarted = false
                     cardView.setImageResource(backside)
@@ -83,7 +67,6 @@ class GameBoard : AppCompatActivity() {
                     score = 0
 
                 }
-
         }
         val buttonHigher = findViewById<Button>(R.id.buttonHigher)
 
@@ -92,15 +75,11 @@ class GameBoard : AppCompatActivity() {
                 val previousCard = card
                 nextCard()
                 if (card > previousCard){
-                    giveScoreCheckWon()
-
-
+                    giveScore()
                 }else{
                     takeScore()
                 }
-
             }
-
         }
 
         val buttonLower = findViewById<Button>(R.id.buttonLower)
@@ -109,41 +88,30 @@ class GameBoard : AppCompatActivity() {
                 val previousCard = card
                 nextCard()
                 if (card < previousCard){
-                  giveScoreCheckWon()
+                  giveScore()
 
                 }else{
                     takeScore()
                 }
-
             }
-
         }
         val returnButton = findViewById<Button>(R.id.buttonReturn)
 
         returnButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
-
         }
-
-
     }
-
-
     fun nextCard (){
         card = (0..52).random()
         cardView.setImageResource(cards[card])
     }
-    fun giveScoreCheckWon(){
+    fun giveScore(){
         score++
         scoreView.text = score.toString()
-        if (score >= 30){
-            scoreView.text = "You won !!!"
-        }
     }
     fun takeScore(){
         score --
         scoreView.text = score.toString()
-
     }
 }
