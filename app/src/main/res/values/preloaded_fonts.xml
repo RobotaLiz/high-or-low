@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/akaya_telivigala</item>
+        <item>@font/almendra</item>
+        <item>@font/almendra_display</item>
+        <item>@font/arizonia</item>
+        <item>@font/bungee_shade</item>
+        <item>@font/ceviche_one</item>
+        <item>@font/creepster</item>
+        <item>@font/crushed</item>
+        <item>@font/damion</item>
+        <item>@font/delius_swash_caps</item>
+        <item>@font/jim_nightshade</item>
+        <item>@font/reggae_one</item>
+        <item>@font/sancreek</item>
+        <item>@font/waiting_for_the_sunrise</item>
+        <item>@font/yatra_one</item>
+        <item>@font/zcool_qingke_huangyou</item>
+        <item>@font/zilla_slab_highlight</item>
+    </array>
+</resources>
