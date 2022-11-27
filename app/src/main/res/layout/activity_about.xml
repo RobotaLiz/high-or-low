@@ -26,16 +26,17 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="373dp"
-        android:layout_height="191dp"
-        android:layout_marginTop="176dp"
+        android:layout_width="378dp"
+        android:layout_height="380dp"
+        android:layout_marginTop="100dp"
         android:fontFamily="@font/sancreek"
-        android:text="this is a simple form of card game, a card is drawn from the deck and then the user must guess whether the next card drawn is bigger or smaller than the previous card. Points are calculated based on how many cards were guessed correctly."
+        android:text="This is a simple form of card game, a card is drawn from the deck and then the user must guess whether the next card drawn is bigger or smaller than the previous card. Points are calculated based on how many cards were guessed correctly.  The rules are: Get as many points as possible in 30 seconds, if you guess correct you’ll get a point, but if you guess wrong, a point is taken from you."
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="0.0" />
