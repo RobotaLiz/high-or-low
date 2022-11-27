@@ -63,7 +63,7 @@ class GameBoard : AppCompatActivity() {
                     hasStarted = false
                     cardView.setImageResource(backside)
                     timerView.text = "30"
-                    scoreView.text = "0"
+                    scoreView.text = "Score:"
                     score = 0
 
                 }
@@ -81,7 +81,6 @@ class GameBoard : AppCompatActivity() {
                 }
             }
         }
-
         val buttonLower = findViewById<Button>(R.id.buttonLower)
         buttonLower.setOnClickListener {
             if (hasStarted){
@@ -108,10 +107,10 @@ class GameBoard : AppCompatActivity() {
     }
     fun giveScore(){
         score++
-        scoreView.text = score.toString()
+        scoreView.text = "Score:" + score.toString()
     }
     fun takeScore(){
         score --
-        scoreView.text = score.toString()
+        scoreView.text = "Score:" + score.toString()
     }
 }
